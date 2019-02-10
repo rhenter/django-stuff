@@ -1,0 +1,4 @@
+-r requirements-ci.txt
+check-manifest
+pre-commit
+twine
