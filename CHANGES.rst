@@ -1,6 +1,11 @@
 Changelog
 ---------
 
+0.1.2
+~~~~~
+
+* Add license on setup.py
+
 0.1.1
 ~~~~~
 
