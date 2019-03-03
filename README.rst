@@ -60,11 +60,11 @@ the `INSTALLED_APPS` on `settings` file in your project folder:
     $ python manage.py migrate
 
 
-.. |PyPI Version| image:: https://img.shields.io/pypi/pyversions/django-stuff.svg?maxAge=360
+.. |PyPI Version| image:: https://img.shields.io/pypi/pyversions/django-stuff.svg?maxAge=60
    :target: https://pypi.python.org/pypi/django-stuff
-.. |PyPI License| image:: https://img.shields.io/pypi/l/django-stuff.svg?maxAge=360
+.. |PyPI License| image:: https://img.shields.io/pypi/l/django-stuff.svg?maxAge=120
    :target: https://github.com/rhenter/django-stuff/blob/master/LICENSE
-.. |PyPI latest| image:: https://img.shields.io/pypi/v/django-stuff.svg?maxAge=360
+.. |PyPI latest| image:: https://img.shields.io/pypi/v/django-stuff.svg?maxAge=120
    :target: https://pypi.python.org/pypi/django-stuff
 .. |CicleCI Status| image:: https://circleci.com/gh/rhenter/django-stuff.svg?style=svg
    :target: https://circleci.com/gh/rhenter/django-stuff
