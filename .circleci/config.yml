@@ -36,7 +36,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            cd ~/repo/test-django-project && py.test -vvv -s --cov django_utils --cov-report=term-missing --cov-report=html
+            cd ~/repo/test-django-project && py.test -vvv -s --cov django_stuff --cov-report=term-missing --cov-report=html
 
       - store_artifacts:
           path: test-reports
