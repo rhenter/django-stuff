@@ -2,7 +2,7 @@ from uuid import UUID
 
 from django.db import models
 
-from django_utils.fields import UUIDPrimaryKeyField
+from django_stuff.fields import UUIDPrimaryKeyField
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 from rest_framework.serializers import ModelSerializer
@@ -46,7 +46,7 @@ class UUIDModel(BaseModel):
     id = UUIDPrimaryKeyField()
 
 
-class SerializerModel(models.Model):
+class SerializerModel(BaseModel):
     class Meta:
         abstract = True
 
@@ -58,15 +58,12 @@ class SerializerModel(models.Model):
 
         SelfSerializer.Meta.model = self
         SelfSerializer.Meta.fields = '__all__'
-
         return SelfSerializer
 
     def serialize(self):
         data = self.serializer(self).data
 
-        # Turns our data JSON serializable:
         for key, value in data.items():
             if isinstance(value, UUID):
                 data[key] = str(value)
-
         return data

@@ -5,9 +5,9 @@ import string
 from django.utils.crypto import get_random_string
 
 
-def generate_activation_code():
+def generate_code(length=10):
     allowed = string.ascii_uppercase + string.digits
-    code = get_random_string(length=10, allowed_chars=allowed)
+    code = get_random_string(length=length, allowed_chars=allowed)
     return code
 
 

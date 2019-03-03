@@ -46,7 +46,7 @@ setup(
     author='Rafael Henter',
     author_email='rafael@henter.com.br',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'Programming Language :: Python:: 3:: Only',
@@ -62,8 +62,8 @@ setup(
     install_requires=install_requires,
     keywords='utils tools django',
     long_description=long_description,
-    name='django-utils',
+    name='django-stuff',
     packages=find_packages(exclude=['docs', 'tests*']),
-    url='https://github.com/rhenter/django-utils',
+    url='https://github.com/rhenter/django-stuff',
     version=version,
 )

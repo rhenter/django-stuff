@@ -1,7 +1,7 @@
 import pytest
 
 from django.forms import ValidationError
-from django_utils.fields import CNPJField, CPFField
+from django_stuff.fields import CNPJField, CPFField
 
 
 pytestmark = pytest.mark.django_db
