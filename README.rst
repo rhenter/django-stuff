@@ -23,7 +23,7 @@ You can get Django Stuff by using pip:
 
 .. code:: shell
 
-    $ pip install django_stuff
+    $ pip install django-stuff
 
 
 If you want to install it from source, grab the git repository from Gitlab and run setup.py:
