@@ -2,7 +2,7 @@
 Django Stuff
 ============
 
-|PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage|
+|PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage| |Docs|
 
 Django Stuff is a collection of tools and utilities to make your development with Django simpler.
 
@@ -82,7 +82,8 @@ Please send pull requests, very much appreciated.
 6. Create a Pull Request with your contribution
 
 
-
+.. |Docs| image:: https://readthedocs.org/projects/django-stuff/badge/?version=latest
+   :target: http://django-stuff.readthedocs.org/en/latest/?badge=latest
 .. |PyPI Version| image:: https://img.shields.io/pypi/pyversions/django-stuff.svg?maxAge=60
    :target: https://pypi.python.org/pypi/django-stuff
 .. |PyPI License| image:: https://img.shields.io/pypi/l/django-stuff.svg?maxAge=120
