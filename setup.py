@@ -1,20 +1,12 @@
 import codecs
 import os
-import re
 
 from setuptools import setup, find_packages, Command
+from django_stuff import __version__
+
+version = __version__
 
 here = os.path.abspath(os.path.dirname(__file__))
-
-version = '0.0.0'
-changes = os.path.join(here, 'CHANGES.rst')
-match = r'^#*\s*(?P<version>[0-9]+\.[0-9]+(\.[0-9]+)?)$'
-with codecs.open(changes, encoding='utf-8') as changes:
-    for line in changes:
-        res = re.match(match, line)
-        if res:
-            version = res.group('version')
-            break
 
 # Get the long description
 with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:

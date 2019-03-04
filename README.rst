@@ -10,8 +10,8 @@ Django Stuff is a collection of tools and utilities to make your development wit
 Requirements
 ============
 
-Django Stuff requires Django 1.11 or later
-
+- Python 3.x
+- Django 1.11 or later
 
 Features
 ========
