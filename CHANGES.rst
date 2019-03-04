@@ -1,6 +1,16 @@
 Changelog
 ---------
 
+0.1.4
+~~~~~
+
+* Update documentation
+
+0.1.3
+~~~~~
+
+* Add noqa imports to models
+
 0.1.2
 ~~~~~
 

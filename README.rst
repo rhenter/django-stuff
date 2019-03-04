@@ -4,13 +4,25 @@ Django Stuff
 
 |PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage|
 
-Is a pack a few Utilities for Django
+Django Stuff is a collection of tools and utilities to make your development with Django simpler.
 
 
 Requirements
 ============
 
 Django Stuff requires Django 1.11 or later
+
+
+Features
+========
+
+- TimeStamp and History models to giving you information like when your record wore created/updated and History Changes
+- UUID Model as primary key or not instead of sequence ID.
+- Serializer model to return a dict with all data of your django instance. Ex:
+
+.. code-block:: python
+
+    instance.serialize()
 
 
 How to install
@@ -39,7 +51,9 @@ Installing It
 -------------
 
 To enable `django_stuff` in your project you need to add it to `INSTALLED_APPS` in your projects
-`settings.py` file::
+`settings.py` file:
+
+.. code-block:: python
 
     INSTALLED_APPS = (
         ...
@@ -48,16 +62,25 @@ To enable `django_stuff` in your project you need to add it to `INSTALLED_APPS` 
     )
 
 
-Run the migrations
-------------------
+Documentation
+=============
 
-To complete the instalation you need to run the migrations right after you have added the `django_stuff` to
-the `INSTALLED_APPS` on `settings` file in your project folder:
+Check out the latest ``django-stuff`` documentation at `Read the Docs <http://django-stuff.readthedocs.io/en/latest/>`_
 
-.. code:: shell
 
-    $ cd YOUR-PROJECT
-    $ python manage.py migrate
+Contributing
+============
+
+Please send pull requests, very much appreciated.
+
+
+1. Fork the `repository <https://github.com/rhenter/django_stuff>`_ on GitHub.
+2. Make a branch off of master and commit your changes to it.
+3. Install requirements. ``pip install -r requirements-dev.txt``
+4. Install pre-commit. ``pre-commit install``
+5. Run the tests with ``py.test -vv -s``
+6. Create a Pull Request with your contribution
+
 
 
 .. |PyPI Version| image:: https://img.shields.io/pypi/pyversions/django-stuff.svg?maxAge=60
