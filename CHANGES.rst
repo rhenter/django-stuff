@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.1.5
+~~~~~
+
+* Add a centered version command
+* Add Sphinx docs base
+* Update dev requirements with Sphinx
+
 0.1.4
 ~~~~~
 
