@@ -25,6 +25,8 @@ Features
     instance.serialize()
 
 
+- And many other stuff. For more information, see our documentation following the link below.
+
 How to install
 ==============
 
