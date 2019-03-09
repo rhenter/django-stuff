@@ -3,7 +3,6 @@ import os
 import vcr
 from django.conf import settings
 
-
 CASSETTES_DIR = os.path.join(str(settings.BASE_DIR),
                              'fixtures/cassettes')
 my_vcr = vcr.VCR(

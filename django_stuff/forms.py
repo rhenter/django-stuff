@@ -2,7 +2,7 @@ from django.forms import ValidationError
 from django.forms.fields import CharField
 from django.utils.translation import ugettext_lazy as _
 
-from .utils import validate_cpf_cnpj, is_equal
+from .utils import validate_cpf, validate_cnpj, is_equal
 
 
 class InvalidValuesField:
@@ -23,7 +23,7 @@ class CPFField(InvalidValuesField, CharField):
 
     def clean(self, value):
         value = super().clean(value)
-        code = validate_cpf_cnpj(value)
+        code = validate_cpf(value)
         if not code or is_equal(code):
             raise ValidationError(_("Invalid CPF number."))
         return code
@@ -41,7 +41,7 @@ class CNPJField(InvalidValuesField, CharField):
 
     def clean(self, value):
         value = super().clean(value)
-        code = validate_cpf_cnpj(value)
+        code = validate_cnpj(value)
         if not code or is_equal(code):
             raise ValidationError(_("Invalid CNPJ number."))
         return code

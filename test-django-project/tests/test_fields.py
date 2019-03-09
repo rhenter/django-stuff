@@ -1,29 +1,28 @@
 import pytest
+import uuid
 
 from django.forms import ValidationError
-from django_stuff.fields import CNPJField, CPFField
 
+from testapp.models import TestModel, TestDigitsOnlyField
 
 pytestmark = pytest.mark.django_db
 
 
-def test_cpf_field_valid():
-    value = '21552411273'
-    assert CPFField().clean(value) == value
+def test_uuid_primary_key_field():
+    obj = TestModel(name='Name')
+    assert obj.pk is None
+    obj.save()
+    assert obj.pk is not None
+    assert isinstance(obj.pk, uuid.UUID)
 
 
-@pytest.mark.parametrize('value', CPFField.invalid_values + ('12345678901',))
-def test_cpf_field_invalid(value):
-    with pytest.raises(ValidationError):
-        CPFField().clean(value)
+@pytest.mark.parametrize('value', ('1', '123', '00123', '000'))
+def test_char_field_only_digits_valid(value):
+    assert not TestDigitsOnlyField(digits_only_field=value).full_clean()
 
 
-def test_cnpj_field_valid():
-    value = '15370536000176'
-    assert CNPJField().clean(value) == value
-
-
-@pytest.mark.parametrize('value', CNPJField.invalid_values + ('12345678901234',))
-def test_cnpj_field_invalid(value):
-    with pytest.raises(ValidationError):
-        CNPJField().clean(value)
+@pytest.mark.parametrize('value', ('a', '12db', '1.23', '123-4'))
+def test_char_field_only_digits_invalid(value):
+    with pytest.raises(ValidationError) as exc:
+        TestDigitsOnlyField(digits_only_field=value).full_clean()
+    assert 'digits_only_field' in exc.value.error_dict
