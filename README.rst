@@ -19,14 +19,8 @@ Features
 - Signals Add methods in your model to do any task before or after save your model
 - TimeStamp and History models to giving you information like when your record wore created/updated and History Changes
 - UUID Model as primary key or not instead of sequence ID.
-- Serializer model to return a dict with all data of your django instance. Ex:
-
-.. code-block:: python
-
-    instance.serialize()
-
-
-- And many other stuff. For more information, see our documentation following the link below.
+- Serializer model to return a dict with all data of your django instance.
+- And many other stuff. For more information, see our documentation at `Read the Docs <http://django-stuff.readthedocs.io/en/latest/>`_.
 
 How to install
 ==============
