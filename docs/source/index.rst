@@ -42,13 +42,6 @@ Development
     development/installation.rst
     development/release.rst
 
-Other
------
-
-.. toctree::
-    :maxdepth: 2
-
-    changelog.rst
 
 Downloads
 ---------
@@ -56,3 +49,11 @@ Downloads
 - `PDF <https://readthedocs.org/projects/django-stuff/downloads/pdf/latest/>`_
 
 - `Epub <https://readthedocs.org/projects/django-stuff/downloads/epub/latest/>`_
+
+
+Other
+-----
+
+.. toctree::
+
+    changelog.rst
