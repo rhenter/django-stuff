@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.1.6
+~~~~~
+
+* BugFix: Models SignalsModel and HistoryModel
+* Fix tests
+* Increase tests coverage
+
 0.1.5
 ~~~~~
 
