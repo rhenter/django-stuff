@@ -37,6 +37,7 @@ jobs:
           command: |
             . venv/bin/activate
             cd ~/repo/test-django-project && py.test -vvv -s --cov django_stuff --cov-report=term-missing --cov-report=html
+            codecov
 
       - store_artifacts:
           path: test-django-project/htmlcov
