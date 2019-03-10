@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.1.7
+~~~~~
+
+* Updates functions names on utlils to be more clear
+* Documentation: Add forms, fields and utils
+
 0.1.6
 ~~~~~
 
@@ -14,7 +20,6 @@ Changelog
 * BugFix: Models SignalsModel and HistoryModel
 * Fix tests
 * Increase tests coverage
-
 
 0.1.5
 ~~~~~
