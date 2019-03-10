@@ -4,6 +4,14 @@ Changelog
 0.1.5
 ~~~~~
 
+* BugFix: Models SignalsModel and HistoryModel
+* Fix tests
+* Increase tests coverage
+
+
+0.1.5
+~~~~~
+
 * Add a centered version command
 * Add Sphinx docs base
 * Update dev requirements with Sphinx
