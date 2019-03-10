@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.1.8
+~~~~~
+
+* Update Readme
+* Increase test coverage
+
 0.1.7
 ~~~~~
 
