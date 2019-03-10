@@ -1,12 +1,16 @@
-.. Django Stuff documentation master file, created by
-   sphinx-quickstart on Mon Feb 04 06:50:23 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Welcome to Django Stuff's documentation!
 ============================================
 
 Django Stuff is a collection of tools and utilities to make your development with Django simpler.
+
+Features
+--------
+
+- TimeStamp and History models to giving you information like when your record wore created/updated and History Changes
+- UUID Model as primary key or not instead of sequence ID.
+- Serializer model to return a dict with all data of your django instance.
+- And many other stuff. For more information, see our documentation following the links below.
+
 
 Quickstart
 ----------
@@ -23,8 +27,10 @@ User Guide
 .. toctree::
     :maxdepth: 1
 
-    overview.rst
-    tutorial.rst
+    fields.rst
+    forms.rst
+    models/index.rst
+    utils.rst
 
 
 Development
