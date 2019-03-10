@@ -7,7 +7,7 @@ from django.utils.crypto import get_random_string
 from django.core.validators import EMPTY_VALUES
 
 
-def sanitize(raw_number):
+def sanitize_digits(raw_number):
     return re.sub(r"[^0-9]", "", raw_number)
 
 
@@ -27,7 +27,7 @@ def validate_cpf(value):
         return ''
     orig_value = value[:]
     if not value.isdigit():
-        value = sanitize(value)
+        value = sanitize_digits(value)
         if not value:
             return False
 
@@ -56,7 +56,7 @@ def validate_cnpj(value):
         return ''
     orig_value = value[:]
     if not value.isdigit():
-        value = sanitize(value)
+        value = sanitize_digits(value)
         if not value:
             return False
 
@@ -75,7 +75,7 @@ def validate_cnpj(value):
     return orig_value
 
 
-def generate_code(length=10):
+def generate_random_code(length=10):
     allowed = string.ascii_uppercase + string.digits
     code = get_random_string(length=length, allowed_chars=allowed)
     return code
