@@ -1,10 +1,10 @@
 from django.db import models
 
-from django_stuff.models import UUIDModel, HistoryModel, SignalsModel, TimestampedModel
+from django_stuff.models import UUIDModel, HistoryModel, SignalsModel, TimestampedModel, SerializerModel
 from django_stuff.fields import CharFieldDigitsOnly
 
 
-class TestModel(UUIDModel, TimestampedModel):
+class TestModel(UUIDModel, TimestampedModel, SerializerModel):
     name = models.CharField(max_length=128)
 
 

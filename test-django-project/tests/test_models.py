@@ -2,7 +2,7 @@ import pytest
 from uuid import uuid4, UUID
 
 from django_stuff.models.exceptions import HistoryModelNotSetError
-from testapp.models import TestSignalsModel, TestHistoryModel, TestHistoryFail
+from testapp.models import TestSignalsModel, TestHistoryModel, TestHistoryFail, TestModel
 
 pytestmark = pytest.mark.django_db
 
@@ -67,11 +67,10 @@ def test_signals_model_save_with_create():
 
 
 def test_signals_model_serialize_method():
-    obj = TestSignalsModel.objects.create(name='test 01')
-
-    obj.id = uuid4()
+    obj = TestModel.objects.create(name='test 01')
     data = obj.serialize()
 
+    assert isinstance(obj.id, UUID)
     assert not isinstance(data['id'], UUID)
 
 
