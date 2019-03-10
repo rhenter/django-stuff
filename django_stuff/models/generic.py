@@ -20,13 +20,6 @@ class SlugModel(BaseModel):
     slug = models.SlugField(max_length=16)
 
 
-class StatusModel(BaseModel):
-    class Meta:
-        abstract = True
-
-    status = models.CharField(max_length=64)
-
-
 class TimestampedModel(BaseModel):
     class Meta:
         abstract = True
