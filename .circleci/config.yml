@@ -39,7 +39,7 @@ jobs:
             cd ~/repo/test-django-project && py.test -vvv -s --cov django_stuff --cov-report=term-missing --cov-report=html
 
       - store_artifacts:
-          path: test-reports
+          path: htmlcov
           destination: test-reports
 
 branches:
