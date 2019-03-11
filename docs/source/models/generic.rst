@@ -20,11 +20,14 @@ Usage:
 SerializerModel
 ---------------
 
-Model so you can serialize your instance data returning a dict.
+Model with serialize method making possible serializer your instance data returning a dict.
 
 Usage:
 
 .. code-block:: python
+
+    from django_stuff.models import SerializerModel
+    ...
 
     class YourModel(SerializerModel)
         ...
@@ -49,6 +52,9 @@ Usage:
 
 .. code-block:: python
 
+    from django_stuff.models import TimestampedModel
+    ...
+
     class YourModel(TimestampedModel)
         ...
 
@@ -61,6 +67,9 @@ Model with UUIDPrimaryKeyField already implemented
 Usage:
 
 .. code-block:: python
+
+    from django_stuff.models import UUIDModel
+    ...
 
     class YourModel(UUIDModel)
         ...
