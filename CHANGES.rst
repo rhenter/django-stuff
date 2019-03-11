@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.1.9
+~~~~~
+
+* Finish all base documentation
+
 0.1.8
 ~~~~~
 
