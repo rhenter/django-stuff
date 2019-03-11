@@ -7,6 +7,7 @@ Django Stuff
 Django Stuff is a collection of tools and utilities to make your development with Django simpler.
 
 
+
 Requirements
 ============
 
@@ -17,6 +18,22 @@ Features
 ========
 
 - Signals Add methods in your model to do any task before or after save your model
+
+Example using Pre-save signal
+
+Note: This will be made before you save your model
+
+.. code-block:: python
+
+    from django_stuff.models import SignalsModel
+    ...
+
+    class YourModel(SignalsModel)
+        ...
+        def pre_save(self):
+            do_something()
+
+
 - TimeStamp and History models to giving you information like when your record wore created/updated and History Changes
 - UUID Model as primary key or not instead of sequence ID.
 - Serializer model to return a dict with all data of your django instance.

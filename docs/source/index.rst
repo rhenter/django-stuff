@@ -9,6 +9,7 @@ Features
 - TimeStamp and History models to giving you information like when your record wore created/updated and History Changes
 - UUID Model as primary key or not instead of sequence ID.
 - Serializer model to return a dict with all data of your django instance.
+- Signals model to add any task before or after you save, update or delete your model
 - And many other stuff. For more information, see our documentation following the links below.
 
 

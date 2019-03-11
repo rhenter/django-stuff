@@ -8,9 +8,12 @@ Usage:
 Your Just need to add your form class. Example using ModelForm:
 
 
+CPFField
+--------
+
 .. code-block:: python
 
-    from django_stuff.forms import CPFField, CNPJField
+    from django_stuff.forms import CPFField
 
     ...
 
@@ -18,13 +21,29 @@ Your Just need to add your form class. Example using ModelForm:
         class Meta:
             model = YourModel
 
-        fields = [..., 'cpf', 'cnpj']
+        fields = [..., 'cpf']
         widgets = {
             'cpf': CNPJField(),
-            'cnpj': CNPJField(),
         }
 
 
 
 
+CNPJField
+---------
+
+.. code-block:: python
+
+    from django_stuff.forms import CNPJField
+
+    ...
+
+    class TestForm(forms.ModelForm):
+        class Meta:
+            model = YourModel
+
+        fields = [..., 'cnpj']
+        widgets = {
+            'cnpj': CNPJField(),
+        }
 
