@@ -11,13 +11,13 @@ Features
 - Serializer model to return a dict with all data of your django instance.
 - Signals model to add any task before or after you save, update or delete your model
 - And many other stuff. For more information, see our documentation following the links below.
-
+- Backend to Login using email or username
 
 Quickstart
 ----------
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     quickstart/installation.rst
 
@@ -28,6 +28,7 @@ User Guide
 .. toctree::
     :maxdepth: 2
 
+    backends/index.rst
     fields.rst
     forms.rst
     models/index.rst

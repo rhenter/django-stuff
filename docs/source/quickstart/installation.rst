@@ -8,8 +8,8 @@ Requirements
 - Django 1.11 or later
 
 
-Getting It
-----------
+Install
+-------
 
 You can get Django Stuff by using pip:
 
@@ -27,8 +27,8 @@ If you want to install it from source, grab the git repository from Gitlab and r
     $ python setup.py install
 
 
-Installing It
--------------
+Enable
+------
 
 To enable `django_stuff` in your project you need to add it to `INSTALLED_APPS` in your projects
 `settings.py` file:
