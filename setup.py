@@ -2,11 +2,10 @@ import codecs
 import os
 
 from setuptools import setup, find_packages, Command
-from django_stuff import __version__
-
-version = __version__
+from django_stuff.version import get_version
 
 here = os.path.abspath(os.path.dirname(__file__))
+version = get_version(here)
 
 # Get the long description
 with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:

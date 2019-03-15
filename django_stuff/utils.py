@@ -2,9 +2,34 @@ import hashlib
 import re
 import time
 import string
+import fnmatch
+import os
 
 from django.utils.crypto import get_random_string
 from django.core.validators import EMPTY_VALUES
+from unipath import Path
+
+
+def find_path(pattern, path, last_folder_only=False, ignored_dirs=''):
+    ignored_dirs = ignored_dirs.split(',')
+    result = []
+
+    for root, dirs, files in os.walk(path):
+        dirs[:] = [d for d in dirs if d not in ignored_dirs]
+
+        for name in files:
+            if fnmatch.fnmatch(name, pattern):
+                result.append(os.path.join(root, name))
+
+    if not result:
+        return ''
+
+    final_path = Path(result[0]).ancestor(1)
+    relative_path = final_path.replace(str(path), '')
+
+    if last_folder_only:
+        return relative_path.split('/')[-1]
+    return relative_path[1:] if relative_path.startswith('/') else relative_path
 
 
 def sanitize_digits(raw_number):
