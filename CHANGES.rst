@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.1.11
+~~~~~~
+
+* BugFix: Change how to get a new version from changes
+
+
 0.1.10
 ~~~~~~
 

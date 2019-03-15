@@ -1,3 +1,4 @@
+import codecs
 import hashlib
 import re
 import time
@@ -110,3 +111,20 @@ def generate_md5_hashcode(key_word):
     keyword = '{}-{}'.format(key_word, time.time())
     hashcode = hashlib.md5(keyword.encode('utf-8')).hexdigest()
     return hashcode
+
+
+def get_version_from_changes(project_root=''):
+    default_version = '0.0.0'
+    current_version = ''
+    changes = os.path.join(project_root, "CHANGES.rst")
+    pattern = r'^(?P<version>[0-9]+.[0-9]+(.[0-9]+)?)'
+    if not os.path.exists(changes):
+        return default_version
+
+    with codecs.open(changes, encoding='utf-8') as changes:
+        for line in changes:
+            match = re.match(pattern, line)
+            if match:
+                current_version = match.group("version")
+                break
+    return current_version or default_version

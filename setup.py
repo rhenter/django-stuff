@@ -1,11 +1,33 @@
 import codecs
 import os
+import re
 
 from setuptools import setup, find_packages, Command
-from django_stuff.version import get_version
+from django_stuff.utils import get_version_from_changes
 
 here = os.path.abspath(os.path.dirname(__file__))
-version = get_version(here)
+version = get_version_from_changes(here)
+
+
+# Save last Version
+def save_version():
+    version_path = os.path.join(here, "django_stuff/version.py")
+
+    with open(version_path) as version_file_read:
+        content_file = version_file_read.read()
+
+    VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
+    mo = re.search(VSRE, content_file, re.M)
+    current_version = mo.group(1)
+
+    content_file = content_file.replace(current_version, "{}".format(version))
+
+    with open(version_path, 'w') as version_file_write:
+        version_file_write.write(content_file)
+
+
+save_version()
+
 
 # Get the long description
 with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:

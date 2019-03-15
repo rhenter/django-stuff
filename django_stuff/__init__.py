@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from .version import version  # noqa
+from .version import __version__  # noqa
 from . import utils  # noqa
 
 
-__version__ = version
 __all__ = ['__version__', 'utils']
