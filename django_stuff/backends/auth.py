@@ -4,6 +4,7 @@ User = get_user_model()
 
 
 class EmailOrUsernameModelBackend(object):
+
     def authenticate(self, username=None, password=None):
         if '@' in username:
             kwargs = {'email': username}
