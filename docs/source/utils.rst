@@ -10,7 +10,7 @@ Usage:
 
 .. code-block:: python
 
-    In[0]: from django_stuff.utls import generate_md5_hashcode
+    In[0]: from django_stuff.utils import generate_md5_hashcode
     In[1]: generate_md5_hashcode('test')
     Out[1]: '39df5136522809aafdf726f1a8a7d00d'
 
@@ -24,7 +24,7 @@ Usage:
 
 .. code-block:: python
 
-    In[0]: from django_stuff.utls import generate_random_code
+    In[0]: from django_stuff.utils import generate_random_code
     In[1]: generate_random_code(16)    # with 16 length
     Out[1]: 'U7Q2M1FW79WIGSW0'
     In[2]: generate_random_code(10)    # with 10 length
@@ -39,7 +39,7 @@ Usage:
 
 .. code-block:: python
 
-    In[0]: from django_stuff.utls import is_equal
+    In[0]: from django_stuff.utils import is_equal
     In[1]: is_equal('asdfgh')
     Out[1]: False
     In[2]: is_equal('aaaaaaaaaa')
@@ -54,7 +54,7 @@ Usage:
 
 .. code-block:: python
 
-    In[0]: from django_stuff.utls import sanitize_digits
+    In[0]: from django_stuff.utils import sanitize_digits
     In[1]: sanitize_digits('123.123.123-23')
     Out[1]: '12312312323'
     In[2]: sanitize_digits('123ASDF')
@@ -71,7 +71,7 @@ Usage:
 
 .. code-block:: python
 
-    In[0]: from django_stuff.utls import validate_cpf
+    In[0]: from django_stuff.utils import validate_cpf
     In[1]: validate_cnpj('01212312312')   # Invalid
     Out[1]: False
     In[2]: validate_cpf('062.265.326-10') # Valid
@@ -88,7 +88,7 @@ Usage:
 
 .. code-block:: python
 
-    In[0]: from django_stuff.utls import validate_cnpj
+    In[0]: from django_stuff.utils import validate_cnpj
     In[1]: validate_cnpj('12345123/000000')      # Invalid
     Out[1]: False
     In[2]: validate_cnpj('61.553.678/0001-96')   # Valid
