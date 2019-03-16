@@ -2,9 +2,11 @@ import codecs
 import fnmatch
 import hashlib
 import os
+import random
 import re
 import string
 import time
+from datetime import datetime, timedelta
 
 from django.utils.crypto import get_random_string
 from django.core.validators import EMPTY_VALUES
@@ -137,3 +139,11 @@ def get_version_from_changes(project_root=''):
                 current_version = match.group("version")
                 break
     return current_version or default_version
+
+
+def generate_datetime(min_year=1900, max_year=datetime.now().year):
+    """Generate a datetime."""
+    start = datetime(min_year, 1, 1, 00, 00, 00)
+    years = max_year - min_year + 1
+    end = start + timedelta(days=365 * years)
+    return start + (end - start) * random.random()

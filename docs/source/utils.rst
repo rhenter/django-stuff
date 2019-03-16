@@ -30,6 +30,21 @@ Usage:
     In[2]: generate_random_code(10)    # with 10 length
     Out[2]: 'D2U2PHUSBD'
 
+generate_datetime
+--------------------
+
+Generates an random datetime
+
+Usage:
+
+.. code-block:: python
+
+    In[0]: from django_stuff.utils import generate_datetime
+    In[1]: generate_datetime()
+    Out[1]: datetime.datetime(1995, 4, 6, 21, 42, 32, 955163)
+    In[2]: generate_datetime(min_year=2019)    # with min_year
+    Out[2]: datetime.datetime(2019, 9, 26, 1, 17, 38, 303408)
+
 is_equal
 --------
 
