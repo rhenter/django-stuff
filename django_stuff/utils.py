@@ -1,10 +1,10 @@
 import codecs
-import hashlib
-import re
-import time
-import string
 import fnmatch
+import hashlib
 import os
+import re
+import string
+import time
 
 from django.utils.crypto import get_random_string
 from django.core.validators import EMPTY_VALUES
@@ -48,7 +48,10 @@ def dv_maker(v):
 
 
 def validate_cpf(value):
-    """Value can be either a string in the format XXX.XXX.XXX-XX or an 11-digit number."""
+    """
+    Value can be either a string in the format XXX.XXX.XXX-XX or
+    an 11-digit number.
+    """
     if value in EMPTY_VALUES:
         return ''
     orig_value = value[:]
@@ -61,12 +64,12 @@ def validate_cpf(value):
         return False
     orig_dv = value[-2:]
 
-    new_1dv = sum([i * int(value[idx])
-                   for idx, i in enumerate(range(10, 1, -1))])
+    r1 = range(10, 1, -1)
+    new_1dv = sum([i * int(value[idx]) for idx, i in enumerate(r1)])
     new_1dv = dv_maker(new_1dv % 11)
     value = value[:-2] + str(new_1dv) + value[-1]
-    new_2dv = sum([i * int(value[idx])
-                   for idx, i in enumerate(range(11, 1, -1))])
+    r2 = range(11, 1, -1)
+    new_2dv = sum([i * int(value[idx]) for idx, i in enumerate(r2)])
     new_2dv = dv_maker(new_2dv % 11)
     value = value[:-1] + str(new_2dv)
     if value[-2:] != orig_dv:
@@ -77,7 +80,10 @@ def validate_cpf(value):
 
 
 def validate_cnpj(value):
-    """Value can be either a string in the format XX.XXX.XXX/XXXX-XX or a group of 14 characters."""
+    """
+    Value can be either a string in the format XX.XXX.XXX/XXXX-XX or
+    a group of 14 characters.
+    """
     if value in EMPTY_VALUES:
         return ''
     orig_value = value[:]
@@ -90,10 +96,13 @@ def validate_cnpj(value):
         return False
     orig_dv = value[-2:]
 
-    new_1dv = sum([i * int(value[idx]) for idx, i in enumerate(list(range(5, 1, -1)) + list(range(9, 1, -1)))])
+    list1 = list(range(5, 1, -1))
+    list2 = list(range(9, 1, -1))
+    new_1dv = sum([i * int(value[idx]) for idx, i in enumerate(list1) + list2])
     new_1dv = dv_maker(new_1dv % 11)
     value = value[:-2] + str(new_1dv) + value[-1]
-    new_2dv = sum([i * int(value[idx]) for idx, i in enumerate(list(range(6, 1, -1)) + list(range(9, 1, -1)))])
+    list3 = list(range(6, 1, -1))
+    new_2dv = sum([i * int(value[idx]) for idx, i in enumerate(list3) + list2])
     new_2dv = dv_maker(new_2dv % 11)
     value = value[:-1] + str(new_2dv)
     if value[-2:] != orig_dv:
