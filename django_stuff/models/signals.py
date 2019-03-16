@@ -7,6 +7,7 @@ from .managers import SignalsManager
 
 
 class SignalsModel(SerializerModel):
+
     class Meta:
         abstract = True
 

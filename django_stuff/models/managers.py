@@ -3,6 +3,7 @@ from django.db import transaction
 
 
 class SignalsManager(models.Manager):
+
     def create(self, **kwargs):
         model_instance = self.initialize_model_instance(**kwargs)
         with transaction.atomic():

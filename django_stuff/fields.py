@@ -5,6 +5,7 @@ from django.db import models
 
 
 class UUIDPrimaryKeyField(models.UUIDField):
+
     def __init__(self, *args, **kwargs):
         kwargs['primary_key'] = True
         kwargs['unique'] = True

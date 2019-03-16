@@ -9,21 +9,19 @@ from rest_framework.serializers import ModelSerializer
 
 
 class BaseModel(models.Model):
+
     class Meta:
         abstract = True
 
 
 class SlugModel(BaseModel):
+    slug = models.SlugField(max_length=16)
+
     class Meta:
         abstract = True
-
-    slug = models.SlugField(max_length=16)
 
 
 class TimestampedModel(BaseModel):
-    class Meta:
-        abstract = True
-
     created_at = models.DateTimeField(
         auto_now_add=True, verbose_name=_('Created at')
     )
@@ -31,21 +29,26 @@ class TimestampedModel(BaseModel):
         auto_now=True, verbose_name=_('Updated at')
     )
 
-
-class UUIDModel(BaseModel):
     class Meta:
         abstract = True
 
+
+class UUIDModel(BaseModel):
     id = UUIDPrimaryKeyField()
+
+    class Meta:
+        abstract = True
 
 
 class SerializerModel(BaseModel):
+
     class Meta:
         abstract = True
 
     @cached_property
     def serializer(self):
         class SelfSerializer(ModelSerializer):
+
             class Meta:
                 pass
 
