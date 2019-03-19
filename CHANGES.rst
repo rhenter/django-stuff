@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.1.12
+~~~~~~
+
+* Add random datetime generator
+
 0.1.11
 ~~~~~~
 
