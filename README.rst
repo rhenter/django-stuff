@@ -6,8 +6,6 @@ Django Stuff
 
 Django Stuff is a collection of tools and utilities to make your development with Django simpler.
 
-
-
 Requirements
 ============
 

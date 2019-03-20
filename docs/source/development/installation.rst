@@ -38,6 +38,7 @@ or:
 
 .. code-block:: bash
 
+    $ cd test-django-project/
     $ py.test -vv -s
 
 Generating documentation
