@@ -91,7 +91,7 @@ Please send pull requests, very much appreciated.
 2. Make a branch off of master and commit your changes to it.
 3. Install requirements. ``pip install -r requirements-dev.txt``
 4. Install pre-commit. ``pre-commit install``
-5. Run the tests with ``py.test -vv -s``
+5. Run the tests with ``cd test-django-project; py.test -vv -s``
 6. Create a Pull Request with your contribution
 
 
