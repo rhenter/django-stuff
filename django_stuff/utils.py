@@ -147,3 +147,7 @@ def generate_datetime(min_year=1900, max_year=datetime.now().year):
     years = max_year - min_year + 1
     end = start + timedelta(days=365 * years)
     return start + (end - start) * random.random()
+
+
+def remove_special_characters(text):
+    return re.sub(r'([^\s\w]|_)+', '', text.strip())
