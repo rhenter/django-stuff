@@ -6,6 +6,7 @@ import random
 import re
 import string
 import time
+import unicodedata
 from datetime import datetime, timedelta
 
 from django.utils.crypto import get_random_string
@@ -150,4 +151,10 @@ def generate_datetime(min_year=1900, max_year=datetime.now().year):
 
 
 def remove_special_characters(text):
-    return re.sub(r'([^\s\w]|_)+', '', text.strip())
+    cleaned_text = re.sub(r'([^\s\w]|_)+', '', text.strip())
+    return remove_accents(cleaned_text)
+
+
+def remove_accents(text):
+    return ''.join(c for c in unicodedata.normalize('NFD', text)
+                   if unicodedata.category(c) != 'Mn')

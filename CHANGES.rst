@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.2.1
+~~~~~
+
+* Remove Swagger render.
+
+0.2.0
+~~~~~
+
+* Add swagger render
+
+
 0.1.12
 ~~~~~~
 
