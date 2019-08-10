@@ -2,7 +2,8 @@ from django.forms import ValidationError
 from django.forms.fields import CharField
 from django.utils.translation import ugettext_lazy as _
 
-from .utils import validate_cpf, validate_cnpj, is_equal
+from .validators import validate_cpf, validate_cnpj
+from .utils import is_equal
 
 
 class InvalidValuesField:

@@ -2,7 +2,7 @@
 
 from django.core.validators import EMPTY_VALUES
 
-from utils.string import digits_only
+from .utils.string import digits_only
 
 def dv_maker(v):
     if v >= 2:

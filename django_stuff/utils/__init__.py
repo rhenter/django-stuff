@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 from . import generators  # noqa
-from . import generic  # noqa
-from . import string  # noqa
+from .generic import find_path, get_version_from_changes  # noqa
+from .string import remove_special_characters, remove_accents, is_equal, digits_only  # noqa
 
-
-__all__ = [string.remove_special_characters, string.remove_accents]
+__all__ = ['remove_special_characters', 'remove_accents', 'is_equal', 'digits_only',
+           'find_path', 'get_version_from_changes']
