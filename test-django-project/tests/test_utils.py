@@ -1,6 +1,6 @@
 import pytest
 
-from django_stuff.utils import remove_special_characters, remove_accents
+from django_stuff.utils.string import remove_special_characters, remove_accents
 
 
 @pytest.mark.parametrize('value,expected', [

@@ -1,5 +1,10 @@
 Changelog
 =========
+0.3.0
+~~~~~
+
+- Refactor Utils
+- Add CPF and CNPJ generators
 
 0.2.1
 ~~~~~
