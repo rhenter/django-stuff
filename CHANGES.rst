@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.2
+~~~~~
+
+- Remove unnecessary code
+
 0.4.1
 ~~~~~
 
