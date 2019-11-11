@@ -34,13 +34,10 @@ class SignalsModel(SerializerModel):
         force_insert = kwargs.get('force_insert', False)
         context = self.get_context(force_insert=force_insert)
 
-        if context['is_creation']:
+        with transaction.atomic():
+            self.trigger_event('pre_save', context)
             super().save(*args, **kwargs)
-        else:
-            with transaction.atomic():
-                self.trigger_event('pre_save', context)
-                super().save(*args, **kwargs)
-                self.trigger_event('post_save', context)
+            self.trigger_event('post_save', context)
 
     def delete(self, *args, **kwargs):
         context = self.get_context()

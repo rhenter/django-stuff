@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.0
+~~~~~
+
+- Add trigger options on save
+
 0.3.0
 ~~~~~
 
