@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.1
+~~~~~
+
+- Fix tests and remove Manager.
+
 0.4.0
 ~~~~~
 
