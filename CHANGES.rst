@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.3
+~~~~~
+
+- Add CPF and CNPJ validation when the values wore equals
+
 0.4.2
 ~~~~~
 

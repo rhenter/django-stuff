@@ -1,6 +1,7 @@
 from django.core.validators import EMPTY_VALUES
 
 from .utils.string import digits_only
+from .utils import is_equal
 
 
 def dv_maker(v):
@@ -21,6 +22,9 @@ def validate_cpf(value):
         value = digits_only(value)
         if not value:
             return False
+
+    if is_equal(value):
+        return False
 
     if len(value) != 11:
         return False
@@ -53,6 +57,9 @@ def validate_cnpj(value):
         value = digits_only(value)
         if not value:
             return False
+
+    if is_equal(value):
+        return False
 
     if len(value) != 14:
         return False
