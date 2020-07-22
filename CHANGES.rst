@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.4
+~~~~~
+
+- Add sequential values on CPF to set as invalid on CPF validation
+
 0.4.3
 ~~~~~
 

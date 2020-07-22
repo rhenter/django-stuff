@@ -1,7 +1,20 @@
 from django.core.validators import EMPTY_VALUES
 
-from .utils.string import digits_only
 from .utils import is_equal
+from .utils.string import digits_only
+
+SEQ_VALUES = [
+    '00000000000',
+    '11111111111',
+    '22222222222',
+    '33333333333',
+    '44444444444',
+    '55555555555',
+    '66666666666',
+    '77777777777',
+    '88888888888',
+    '99999999999'
+]
 
 
 def dv_maker(v):
@@ -15,8 +28,8 @@ def validate_cpf(value):
     Value can be either a string in the format XXX.XXX.XXX-XX or
     an 11-digit number.
     """
-    if value in EMPTY_VALUES:
-        return ''
+    if value in EMPTY_VALUES or value in SEQ_VALUES:
+        return False
     orig_value = value[:]
     if not value.isdigit():
         value = digits_only(value)
