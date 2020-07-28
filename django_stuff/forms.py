@@ -1,6 +1,6 @@
 from django.forms import ValidationError
 from django.forms.fields import CharField
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .validators import validate_cpf, validate_cnpj
 from .utils import is_equal

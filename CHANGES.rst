@@ -1,5 +1,10 @@
 Changelog
 =========
+0.5.1
+~~~~~
+
+- Change ugettext_lazy to gettext_lazy cause django 3.0 support
+
 0.5.0
 ~~~~~
 
