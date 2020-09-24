@@ -1,5 +1,10 @@
 Changelog
 =========
+0.6.2
+~~~~~
+
+- Add Missing Argument to delete on softdelete manager
+
 0.6.1
 ~~~~~
 

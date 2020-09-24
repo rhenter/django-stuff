@@ -18,12 +18,12 @@ class SignalsManager(models.Manager):
 
 class SoftDeleteQuerySet(QuerySet):
     def delete(self):
-        return super().update(deleted_at=timezone.now())
+        return super().update(deleted_at=timezone.now(), is_deleted=True)
 
     def hard_delete(self):
         return super().delete()
 
-    def deleted(self):
+    def trash(self):
         return self.filter(is_deleted=True)
 
 
