@@ -1,5 +1,10 @@
 Changelog
 =========
+0.6.1
+~~~~~
+
+- Fix tests with Signal using create method
+
 0.6.0
 ~~~~~
 
