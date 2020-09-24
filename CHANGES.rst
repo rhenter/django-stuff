@@ -1,5 +1,10 @@
 Changelog
 =========
+0.6.0
+~~~~~
+
+- Add SoftDeleteSignalModel and Manager to apply Soft delete
+
 0.5.1
 ~~~~~
 

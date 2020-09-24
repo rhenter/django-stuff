@@ -1,15 +1,18 @@
+from functools import partial
 from uuid import UUID
 
 from django.db import models
-
-from django_stuff.fields import UUIDPrimaryKeyField
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from rest_framework.serializers import ModelSerializer
 
+from django_stuff.fields import UUIDPrimaryKeyField
+from django_stuff.utils.generators import generate_random_code
+
+generate_code = partial(generate_random_code, length=8)
+
 
 class BaseModel(models.Model):
-
     class Meta:
         abstract = True
 
@@ -42,13 +45,9 @@ class UUIDModel(BaseModel):
 
 class SerializerModel(BaseModel):
 
-    class Meta:
-        abstract = True
-
     @cached_property
     def serializer(self):
         class SelfSerializer(ModelSerializer):
-
             class Meta:
                 pass
 
@@ -63,3 +62,18 @@ class SerializerModel(BaseModel):
             if isinstance(value, UUID):
                 data[key] = str(value)
         return data
+
+    class Meta:
+        abstract = True
+
+
+class CodeModel(models.Model):
+    code = models.CharField(
+        max_length=32,
+        default=generate_code,
+        verbose_name=_('Model code'),
+        unique=True,
+    )
+
+    class Meta:
+        abstract = True

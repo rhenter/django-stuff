@@ -1,12 +1,14 @@
 import inspect
 
-from django.db import transaction
+from django.db import transaction, models
+from django.utils import timezone
 
 from .generic import SerializerModel
-from .managers import SignalsManager
+from .managers import SignalsManager, SoftDeleteManager
 
 
 class SignalsModel(SerializerModel):
+    SOFT_DELETE = False
 
     class Meta:
         abstract = True
@@ -42,7 +44,28 @@ class SignalsModel(SerializerModel):
     def delete(self, *args, **kwargs):
         context = self.get_context()
 
+        if self.SOFT_DELETE and not kwargs.pop('hard_delete', False):
+            self.deleted_at = timezone.now()
+            self.is_deleted = True
+            self.save()
+            return
+
         with transaction.atomic():
             self.trigger_event('pre_delete', context)
             super().delete(*args, **kwargs)
             self.trigger_event('post_delete', context)
+
+
+class SoftDeleteSignalModel(SignalsModel):
+    SOFT_DELETE = True
+    deleted_at = models.DateTimeField(blank=True, null=True)
+    is_deleted = models.BooleanField(default=False)
+
+    objects = SoftDeleteManager()
+    all_objects = SoftDeleteManager(show_deleted=True)
+
+    class Meta:
+        abstract = True
+
+    def hard_delete(self):
+        super().delete(hard_delete=True)
