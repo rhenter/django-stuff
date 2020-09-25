@@ -1,5 +1,10 @@
 Changelog
 =========
+0.7.0
+~~~~~
+
+- Add restore method to Model and Manager to restore a record
+
 0.6.2
 ~~~~~
 

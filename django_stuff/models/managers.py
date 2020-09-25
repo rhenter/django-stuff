@@ -23,6 +23,9 @@ class SoftDeleteQuerySet(QuerySet):
     def hard_delete(self):
         return super().delete()
 
+    def restore(self):
+        return super().update(deleted_at=None, is_deleted=False)
+
     def trash(self):
         return self.filter(is_deleted=True)
 
@@ -42,6 +45,9 @@ class SoftDeleteManager(SignalsManager):
 
     def hard_delete(self):
         return self.get_queryset().hard_delete()
+
+    def restore(self):
+        return self.get_queryset().restore()
 
     def filter(self, *args, **kwargs):
         if 'is_deleted' in kwargs:

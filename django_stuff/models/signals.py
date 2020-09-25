@@ -1,6 +1,6 @@
 import inspect
 
-from django.db import transaction, models
+from django.db import models, transaction
 from django.utils import timezone
 
 from .generic import SerializerModel
@@ -69,3 +69,8 @@ class SoftDeleteSignalModel(SignalsModel):
 
     def hard_delete(self):
         super().delete(hard_delete=True)
+
+    def restore(self):
+        self.deleted_at = None
+        self.is_deleted = False
+        self.save()
