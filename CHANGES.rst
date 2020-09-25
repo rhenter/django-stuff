@@ -1,5 +1,10 @@
 Changelog
 =========
+0.7.1
+~~~~~
+
+- Rename SoftDeleteManager to SoftDeleteSignalsManager
+
 0.7.0
 ~~~~~
 

@@ -30,7 +30,7 @@ class SoftDeleteQuerySet(QuerySet):
         return self.filter(is_deleted=True)
 
 
-class SoftDeleteManager(SignalsManager):
+class SoftDeleteSignalsManager(SignalsManager):
     def __init__(self, *args, **kwargs):
         self.show_deleted = kwargs.pop('show_deleted', False)
         super().__init__(*args, **kwargs)

@@ -4,7 +4,7 @@ from django.db import models, transaction
 from django.utils import timezone
 
 from .generic import SerializerModel
-from .managers import SignalsManager, SoftDeleteManager
+from .managers import SignalsManager, SoftDeleteSignalsManager
 
 
 class SignalsModel(SerializerModel):
@@ -61,8 +61,8 @@ class SoftDeleteSignalModel(SignalsModel):
     deleted_at = models.DateTimeField(blank=True, null=True)
     is_deleted = models.BooleanField(default=False)
 
-    objects = SoftDeleteManager()
-    all_objects = SoftDeleteManager(show_deleted=True)
+    objects = SoftDeleteSignalsManager()
+    all_objects = SoftDeleteSignalsManager(show_deleted=True)
 
     class Meta:
         abstract = True
