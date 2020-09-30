@@ -1,5 +1,10 @@
 Changelog
 =========
+0.7.2
+~~~~~
+
+- Update delete with force hard_delete
+
 0.7.1
 ~~~~~
 
